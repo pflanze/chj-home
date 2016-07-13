@@ -16,3 +16,7 @@
 
 #[gpg]
 #	program = gpg+scrypt
+
+#[push]
+#	default = simple
+#wow old git can*not* deal with this
