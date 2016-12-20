@@ -1,0 +1,18 @@
+
+[diff "cj"]
+	command = _cj-git-tkdiff
+
+[user]
+	email = ch@christianjaeger.ch
+	name = Christian Jaeger
+
+[merge]
+	conflictstyle = diff3
+	#renameLimit = 2000
+[core]
+	excludesfile = ~/.gitignore_global
+[credential]
+	username = pflanze
+
+#[gpg]
+#	program = gpg+scrypt

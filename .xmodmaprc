@@ -1,0 +1,20 @@
+!clear  ?
+
+! Modifier keys:
+!Control_L
+!?
+!Alt_L
+!ISO_Level3_Shift
+!Super_R
+!Menu
+!Control_R
+
+!vs man page: Shift, Lock,
+! Control, Mod1, Mod2, Mod3, Mod4, Mod5
+
+! Mod1 is the emacs meta key  Alt.  sigh.
+
+keycode 133 = less greater less greater backslash brokenbar backslash brokenbar
+keycode 134 = backslash brokenbar
+
+

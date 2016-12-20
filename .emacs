@@ -1,0 +1,1 @@
+/opt/chj/emacs/.emacs

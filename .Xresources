@@ -1,0 +1,90 @@
+! 'xrdb .Xresources' for reloading (before Debian it was .Xdefaults)
+! (it *does* delete resources that are not in the file anymore [hm. sometimes?])
+
+! 'appres ..' for displaying
+
+! xprop | grep WM_CLASS and click on a window for showing under which
+! ids a program *might* read settings, although xemacs for example
+! does not show up as xemacs there but still reads the xemacs*
+! settings.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+xpdf.initialZoom: width
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+emacs21*cursorColor: #e0f000
+emacs21*Foreground:  black
+emacs21*Background: white
+emacs21*geometry: 100x45
+emacs21*toolbarlines: 0
+
+
+emacs23*cursorColor: #e0f000
+emacs23*Foreground:  black
+emacs23*Background: white
+emacs23*geometry: 100x45
+emacs23*toolbarlines: 0
+
+emacs*geometry: 83x45
+
+! emacs23*font: -Adobe-Courier-Medium-R-Normal--17-120-100-100-M-100-ISO8859-1
+emacs23.font: -Adobe-Courier-Medium-R-Normal--17-120-100-100-M-100-ISO8859-1
+! emacs22.font: -Adobe-Courier-Medium-R-Normal--17-120-100-100-M-100-ISO8859-1
+! emacs22.font: -misc-fixed-*-r-*-*-*-*-*-*-*-90-*-*
+emacs22.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
+emacs21.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+xemacs*Background: #d3d3dd
+xemacs.default.attributeBackground: #f0e8f2
+xemacs*borderColor: Red
+xemacs*borderWidth: 0
+! ^- damit dann kein Rand mehr
+xemacs*internalBorderWidth: 1
+xemacs.internalBorderColor: Red
+
+! xemacs*Foreground: Whea
+! xemacs*pointerColor: Orchid
+!              ^- inhaltsfarbe
+xemacs*pointerBackground: #e0e0e0
+xemacs*cursorColor: Orchid
+! xemacs*bitmapIcon: on
+! xemacs*font: fixed
+xemacs.geometry: 90x43
+xemacs.leftToolBarWidth: 30
+
+! menubar
+XEmacs*fontSet: -adobe-helvetica-bold-r-normal-*-12-*-*-*-*-*-*-*
+XEmacs*menubar*FontSet: -adobe-helvetica-bold-r-normal-*-12-*-*-*-*-*-*-*
+! modeline
+!XEmacs.modeline.attributeFont: -*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+URxvt.geometry: 80x25
+
+URxvt.scrollTtyOutput: False
+URxvt.scrollTtyKeypress: True
+URxvt.scrollWithBuffer: True
+
+! URxvt.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
+! uses cmdline flag (-fn) from term now
+
+URxvt.perl-ext: default,-selection
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+xearth.bigstars:	20
+xearth.starfreq:	0.001
+xearth.twopix:	False
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ptkdb*scrollbars: sw
+!Does not work. See env var instead (s. manpage).
+
+
+
+
+Xpdf.geometry: 1059x900
