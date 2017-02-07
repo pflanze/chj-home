@@ -83,8 +83,6 @@ alias les=less
 alias le=zless
 #^ zless?  egal ja ebe ?. nun. -- nope nid egal. cat file.gz|less doesn't work, zless does.
 alias c=cd
-function lt { l "$@" |tail -20 ; }
-#well farbefehlt. und  argumente fürs lt natürlich dumm.  warum isch das kein skirpt ??
 alias cdsp="cd ~/Projekte/spielzeug"
 cdnewdir() {
     if [ "$#" -eq 1 ]; then
