@@ -83,7 +83,6 @@ alias les=less
 alias le=zless
 #^ zless?  egal ja ebe ?. nun. -- nope nid egal. cat file.gz|less doesn't work, zless does.
 alias c=cd
-alias cdsp="cd ~/Projekte/spielzeug"
 cdnewdir() {
     if [ "$#" -eq 1 ]; then
         mkdir "$1" && cd "$1"
