@@ -14,15 +14,8 @@ xpdf.initialZoom: width
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-emacs23*cursorColor: #e0f000
-emacs23*Foreground:  black
-emacs23*Background: white
-emacs23*geometry: 80x65
-emacs23*toolbarlines: 0
-
 emacs*geometry: 80x65
 
-emacs23.font: -Adobe-Courier-Medium-R-Normal--17-120-100-100-M-100-ISO8859-1
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
