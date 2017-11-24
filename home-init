@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=
+
+set -x
+
+ln -s /opt/chj/emacs/.emacs
+
+mkdir .xemacs/
+ln -s /opt/chj/xemacs/init.el .xemacs/
+
+ln -s /opt/chj/emacs/.emacs.d
+
+set +x
+echo done.

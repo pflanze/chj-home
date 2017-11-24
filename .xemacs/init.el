@@ -1,1 +1,0 @@
-/opt/chj/xemacs/init.el
