@@ -141,9 +141,6 @@ mv() { mv -i "$@"; }
 cp() { cp -i "$@"; }
 #rm() { rm -i "$@"; }
 
-alias cdth=ct
-alias cdc='cd ~/Projekte/categorical'
-
 rens () {
     cd scratch/
     ren -- "`lastfile .`"
