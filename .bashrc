@@ -43,27 +43,14 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
-    alias ls='ls --color=auto'
+    ls() { ls --color=auto "$@"; }
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
 fi
-
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -72,17 +59,14 @@ fi
 #    . /etc/bash_completion
 #fi
 
-
-alias u="cd .."
-alias uu="cd ../.."
-alias uuu="cd ../../.."
-alias uuuu="cd ../../../.."
-alias uuuuu="cd ../../../../.."
-#alias cdnewdir="
-alias les=less
-alias le=zless
-#^ zless?  egal ja ebe ?. nun. -- nope nid egal. cat file.gz|less doesn't work, zless does.
-alias c=cd
+u() { cd ..; }
+uu() { cd ../..; }
+uuu() { cd ../../..; }
+uuuu() { cd ../../../..; }
+uuuuu() { cd ../../../../..; }
+les() { less; }
+le() { zless; }
+c() { cd; }
 cdnewdir() {
     if [ "$#" -eq 1 ]; then
         mkdir "$1" && cd "$1"
@@ -150,12 +134,12 @@ ct () {
     cd ~/Projekte/thesis
 }
 
-alias find=my.find
-alias df=my.df
+find() { my.find "$@"; }
+df() { my.df "$@"; }
 
-alias mv='mv -i'
-alias cp='cp -i'
-#alias rm='rm -i'
+mv() { mv -i "$@"; }
+cp() { cp -i "$@"; }
+#rm() { rm -i "$@"; }
 
 alias cdth=ct
 alias cdc='cd ~/Projekte/categorical'
