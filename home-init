@@ -12,5 +12,7 @@ ln -s /opt/chj/xemacs/init.el .xemacs/
 
 ln -s /opt/chj/emacs/.emacs.d
 
+lesskey
+
 set +x
 echo done.
