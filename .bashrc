@@ -47,7 +47,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
-    ls() { ls --color=auto "$@"; }
+    ls() { command ls --color=auto "$@"; }
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
 fi
@@ -127,9 +127,9 @@ cs() {
 find() { my.find "$@"; }
 df() { my.df "$@"; }
 
-mv() { mv -i "$@"; }
-cp() { cp -i "$@"; }
-#rm() { rm -i "$@"; }
+mv() { command mv -i "$@"; }
+cp() { command cp -i "$@"; }
+#rm() { command rm -i "$@"; }
 
 rens () {
     cd scratch/
