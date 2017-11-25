@@ -34,9 +34,7 @@ unset GNOME_KEYRING_CONTROL
 export COLUMNS
 export HISTSIZE=1500
 
-
-# --- Machine specific env setup: -------
-ulimit -S -v 1200000
+ulimit -S -v 1200000  # note: can override in .bash_profile_local
 
 
 # --- Personal env setup: -------
