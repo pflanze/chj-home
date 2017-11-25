@@ -142,25 +142,6 @@ settitle () {
 }
 
 
-newAI () {
-    cd ~/Github/LondonHackspaceAI-common
-    cat <<EOF >> users/Christian.md
-* []() ([HN]())
-
-EOF
-    E users/Christian.md
-}
-
-newRust () {
-    cd ~/Github/LondonRustLearners-wiki
-    cat <<EOF >> users/Christian_Jaeger.md
-* []() ([HN]())
-
-EOF
-    E users/Christian_Jaeger.md
-}
-
-
 # --- End -------------------------------------
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
