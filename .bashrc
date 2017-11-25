@@ -146,10 +146,6 @@ rens () {
     ren -- "`lastfile .`"
 }
 
-# hm hack for novo, not running Gnome anymore, for some reason this
-# env var is set, why no idea, foo.
-unset GNOME_KEYRING_CONTROL
-
 settitle () {
     unset PROMPT_COMMAND
     /opt/chj/bin/settitle "$@"
