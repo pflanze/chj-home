@@ -49,7 +49,9 @@ export LANG=en_GB.UTF-8
 
 
 # --- End -------------------------------------
-# include .bashrc if it exists
+if [ -f ~/.bash_profile_local ]; then
+    source ~/.bash_profile_local
+fi
 if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
+    source ~/.bashrc
 fi
