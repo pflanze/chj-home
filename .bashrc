@@ -142,8 +142,6 @@ settitle () {
 }
 
 
-export ALSARECDEV='sysdefault:CARD=C1100'
-
 newAI () {
     cd ~/Github/LondonHackspaceAI-common
     cat <<EOF >> users/Christian.md

@@ -24,6 +24,8 @@ if [ -d ~/local/bin ] ; then
     PATH=~/local/bin:"${PATH}"
 fi
 
+
+# --- General env setup -------
 unset LESSOPEN
 unset LESSCLOSE
 # not running Gnome anymore, for some reason this env var is set, why
@@ -33,13 +35,20 @@ export COLUMNS
 export HISTSIZE=1500
 
 
+# --- Machine specific env setup: -------
+export ALSARECDEV='sysdefault:CARD=C1100'
+
 ulimit -S -v 1200000
 
+
+# --- Personal env setup: -------
 export EDITOR=e
 export BROWSER="chromium-chrissbx -- --new-window"
 export EMAIL='ch@christianjaeger.ch'
 export LANG=en_GB.UTF-8
 
+
+# --- End -------------------------------------
 # include .bashrc if it exists
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
