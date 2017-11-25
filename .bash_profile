@@ -36,8 +36,6 @@ export HISTSIZE=1500
 
 
 # --- Machine specific env setup: -------
-export ALSARECDEV='sysdefault:CARD=C1100'
-
 ulimit -S -v 1200000
 
 
