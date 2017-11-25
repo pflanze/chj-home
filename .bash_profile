@@ -24,18 +24,15 @@ if [ -d ~/local/bin ] ; then
     PATH=~/local/bin:"${PATH}"
 fi
 
+unset LESSOPEN
+unset LESSCLOSE
+
 ulimit -S -v 1200000
 
 export EDITOR=e
 export BROWSER="chromium-chrissbx -- --new-window"
-
 export EMAIL='ch@christianjaeger.ch'
-
-unset LESSOPEN
-unset LESSCLOSE
-
 export LANG=en_GB.UTF-8
-
 
 # include .bashrc if it exists
 if [ -f ~/.bashrc ]; then
