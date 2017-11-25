@@ -16,5 +16,14 @@ ln -s /opt/chj/emacs/.emacs.d
 
 lesskey
 
+(
+    umask 077
+    mkdir -p tmp .ssh DROP
+)
+
+chmod a+wxt,g+s DROP
+touch .ssh/authorized_keys
+chmod go-w .ssh/authorized_keys
+
 set +x
 echo done.
