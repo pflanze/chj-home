@@ -17,14 +17,14 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-PATH=/root/TEMP/cj-git-patchtool:/home/chris/NEUE/bin/:/home/chris/Projekte/spielzeug/bin:/opt/chj/bin:/usr/local/sbin:/usr/local/bin:/usr/local/Gambit-C/current/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PATH=/opt/chj/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
-# software installed under the user's home, 'locally'
+# third party software (binaries) installed under the user's home, 'locally'
 if [ -d ~/local/bin ] ; then
     PATH=~/local/bin:"${PATH}"
 fi
