@@ -29,6 +29,8 @@ unset LESSCLOSE
 # not running Gnome anymore, for some reason this env var is set, why
 # no idea, XX.
 unset GNOME_KEYRING_CONTROL
+export COLUMNS
+export HISTSIZE=1500
 
 
 ulimit -S -v 1200000

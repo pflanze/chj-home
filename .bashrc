@@ -119,9 +119,6 @@ cdpwd() {
 cdp() {
     cd "`pwd -P`"
 }
-export COLUMNS
-
-HISTSIZE=1500
 
 unlimit() {
     ulimit -S -v unlimited
@@ -171,4 +168,5 @@ newRust () {
 EOF
     E users/Christian_Jaeger.md
 }
+
 
