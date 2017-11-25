@@ -5,9 +5,11 @@ IFS=
 
 set -x
 
+cd
+
 ln -s /opt/chj/emacs/.emacs
 
-mkdir .xemacs/
+mkdir .xemacs/ || true
 ln -s /opt/chj/xemacs/init.el .xemacs/
 
 ln -s /opt/chj/emacs/.emacs.d
