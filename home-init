@@ -3,9 +3,14 @@
 set -euo pipefail
 IFS=
 
-set -x
+if [ "$(readlink -f .)" != "$(readlink -f ~)" ]; then
+    if [ "$(readlink -f .)" != "$(readlink -f "$(dirname "$0")")" ]; then
+	echo "$0: must be run from home dir or from $(dirname "$0"). Terminating."
+	exit 1
+    fi
+fi
 
-cd
+set -x
 
 ln -s /opt/chj/emacs/.emacs
 
