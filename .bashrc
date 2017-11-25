@@ -176,4 +176,3 @@ EOF
     E users/Christian_Jaeger.md
 }
 
-export LANG=en_GB.UTF-8
