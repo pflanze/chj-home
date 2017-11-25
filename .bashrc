@@ -76,7 +76,7 @@ cdnewdir() {
 };
 mvcdnewdir() {
     if [ "$#" -gt 1 ]; then
-        mvnewdir "$@" && cd "${!#}"   # ${!#}: Tip 16Nov02 1544 von #bash
+        mvnewdir "$@" && cd "${!#}"
     else
         echo At least two arguments expected
     fi
@@ -86,7 +86,7 @@ mvcd() {
         if [ -d "${!#}" ]; then
             mv "$@" && cd "${!#}"
         else
-            #echo Last argument is not a directory
+            # echo Last argument is not a directory
             if [ "$#" -eq 2 ]; then
                 if [ -d "$1" ]; then
                     mv "$@" && cd "${!#}"
@@ -115,10 +115,6 @@ cdt() {
 cdpwd() {
     cd "`pwd -P`"
 }
-# ich benutz doch (wieder?) oefter cdp (Buchsi schwimmbad)
-cdp() {
-    cd "`pwd -P`"
-}
 
 unlimit() {
     ulimit -S -v unlimited
@@ -126,9 +122,6 @@ unlimit() {
 
 cs() {
     cd ~/scratch
-}
-ct () {
-    cd ~/Projekte/thesis
 }
 
 find() { my.find "$@"; }
