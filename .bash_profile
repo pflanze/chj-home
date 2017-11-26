@@ -24,6 +24,9 @@ if [ -d ~/local/bin ] ; then
     PATH=~/local/bin:"${PATH}"
 fi
 
+if [ "$UID" -eq 0 ]; then
+    PATH=/root/local/sbin:/root/sbin:"$PATH"
+fi
 
 # --- General env setup -------
 unset LESSOPEN

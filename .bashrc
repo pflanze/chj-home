@@ -141,6 +141,13 @@ settitle () {
     /opt/chj/bin/settitle "$@"
 }
 
+if [ "$UID" -eq 0 ]; then
+    tar () {
+	echo "'tar': use tar-names or tar-numbers instead" >&2
+	return 1
+    }
+fi
+
 
 # --- End -------------------------------------
 if [ -f ~/.bashrc_local ]; then
