@@ -72,6 +72,7 @@ cdnewdir() {
         mkdir "$1" && cd "$1"
     else
         echo One argument required
+	false
     fi
 };
 mvcdnewdir() {
@@ -79,6 +80,7 @@ mvcdnewdir() {
         mvnewdir "$@" && cd "${!#}"
     else
         echo At least two arguments expected
+	false
     fi
 };
 mvcd() {
@@ -92,13 +94,16 @@ mvcd() {
                     mv "$@" && cd "${!#}"
                 else
                     echo Neither argument is a directory
+		    false
                 fi
             else
                 echo More than two arguments and last one is not a directory
+		false
             fi
         fi
     else
         echo At least two arguments expected
+	false
     fi
 }
 cd_newest_sisterfolder() {
