@@ -4,12 +4,64 @@ set -euo pipefail
 IFS=
 
 if [ "$(readlink -f .)" != "$(readlink -f ~)" ]; then
-    if [ "$(readlink -f .)" != "$(readlink -f "$(dirname "$0")")" ]; then
-	echo "$0: must be run from home dir or from $(dirname "$0"). Terminating."
-	exit 1
-    fi
+    echo "$0: must be run from home dir. Terminating."
+    exit 1
 fi
 
+
+cancel() {
+    echo "$0: cancelled due to missing answer."
+    exit 1
+}
+
+if read -e -p "Please enter your full name: " fullname; then
+    if read -e -p "Please enter your (bare) email address: " email; then
+	echo "$fullname" > .chj-home_fullname
+	echo "$email" > .chj-home_email
+    else
+	cancel
+    fi
+else
+    cancel
+fi
+
+if [ -e .bash_profile_local ]; then
+    /opt/chj/bin/mvnumber .bash_profile_local
+fi
+cat <<'EOF' > .bash_profile_local
+export EDITOR=e
+export BROWSER="chromium-chrissbx -- --new-window"
+export EMAIL=$(cat ~/.chj-home_email)
+export LANG=en_GB.UTF-8
+EOF
+
+if [ -e .gitconfig ]; then
+    /opt/chj/bin/mvnumber .gitconfig
+fi
+cat <<EOF > .gitconfig
+[user]
+	email = $email
+	name = $fullname
+
+[diff "cj"]
+	command = _cj-git-tkdiff
+
+[merge]
+	conflictstyle = diff3
+	#renameLimit = 2000
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+#[gpg]
+#	program = gpg+scrypt
+
+#[push]
+#	default = simple
+# old git can*not* deal with this
+EOF
+
+set +eu
 set -x
 
 ln -s /opt/chj/emacs/.emacs
@@ -31,4 +83,5 @@ touch .ssh/authorized_keys
 chmod go-w .ssh/authorized_keys
 
 set +x
-echo done.
+
+echo "NOTE: Your answers have been written to .chj-home_fullname, .chj-home_email, and the files .bash_profile_local and .gitconfig have been generated."

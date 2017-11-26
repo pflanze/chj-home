@@ -41,15 +41,14 @@ ulimit -S -v 1200000  # note: can override in .bash_profile_local
 
 
 # --- Personal env setup: -------
-export EDITOR=e
-export BROWSER="chromium-chrissbx -- --new-window"
-export EMAIL='ch@christianjaeger.ch'
-export LANG=en_GB.UTF-8
+# see ~/.bash_profile_local
 
 
 # --- End -------------------------------------
 if [ -f ~/.bash_profile_local ]; then
     source ~/.bash_profile_local
+else
+    echo "NOTE: ~/.bash_profile_local does not exist, please run ~/home-init" >&2
 fi
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
