@@ -9,6 +9,12 @@ if [ "$(readlink -f .)" != "$(readlink -f ~)" ]; then
 fi
 
 
+if [ -e .home-init-done ]; then
+    echo "$0 was already run before; if you want to force re-running it, please run 'rm .home-init-done' first."
+    exit 0
+fi
+
+
 cancel() {
     echo "$0: cancelled due to missing answer."
     exit 1
@@ -81,6 +87,7 @@ lesskey
 chmod a+wxt,g+s DROP
 touch .ssh/authorized_keys
 chmod go-w .ssh/authorized_keys
+touch .home-init-done
 
 set +x
 
