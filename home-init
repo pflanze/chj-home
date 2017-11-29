@@ -81,7 +81,7 @@ lesskey
 
 (
     umask 077
-    mkdir -p tmp .ssh DROP
+    mkdir -p tmp .ssh DROP scratch
 )
 
 chmod a+wxt,g+s DROP
