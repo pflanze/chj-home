@@ -39,6 +39,10 @@ export HISTSIZE=1500
 
 ulimit -S -v 3200000  # note: can override in .bash_profile_local
 
+if [ -n "${DISPLAY-}" ]; then
+    xset -b
+fi
+
 
 # --- Personal env setup: -------
 # see ~/.bash_profile_local
