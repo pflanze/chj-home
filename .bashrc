@@ -154,6 +154,31 @@ if [ "$UID" -eq 0 ]; then
 fi
 
 
+ps () {
+    command ps --sort=start_time "$@"
+}
+
+lsof () {
+    command lsof -nP "$@"
+    # -n = no host names
+    # -P = no port names
+}
+
+# Utils which might be later in PATH than system ones:
+
+ls () { /opt/chj/bin/ls "$@"; } # XX is this still useful?
+sort () { /opt/chj/bin/sort "$@"; }
+smplayer () { /opt/chj/bin/smplayer "$@"; }
+zless () { /opt/chj/bin/zless "$@"; }
+xpdf () { /opt/chj/bin/xpdf "$@"; }
+modprobe () { /opt/chj/bin/modprobe "$@"; }
+halt () { /opt/chj/bin/halt "$@"; }
+open () { /opt/chj/bin/open "$@"; }
+suxterm () { /opt/chj/bin/suxterm "$@"; }
+pdftotext () { /opt/chj/bin/pdftotext "$@"; }
+gv () { /opt/chj/bin/gv "$@"; }
+
+
 # --- End -------------------------------------
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
