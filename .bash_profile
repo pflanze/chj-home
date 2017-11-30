@@ -12,7 +12,7 @@ fi
 # the default umask is set in /etc/login.defs
 # umask 002
 
-PATH=/opt/chj/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PATH=/opt/chj/cj-git-patchtool:/opt/chj/git-sign/bin:/opt/chj/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
