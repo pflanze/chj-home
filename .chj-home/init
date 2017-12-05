@@ -81,13 +81,15 @@ lesskey
 
 (
     umask 077
-    mkdir -p tmp .ssh DROP scratch
+    mkdir -p tmp .ssh DROP scratch bin
 )
 
 chmod a+wxt,g+s DROP
 touch .ssh/authorized_keys
 chmod go-w .ssh/authorized_keys
 touch .chj-home/init-done
+
+ln -s /opt/chj/emacs/bin/* bin || true
 
 set +x
 
