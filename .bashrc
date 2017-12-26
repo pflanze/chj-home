@@ -149,7 +149,7 @@ settitle () {
 if [ "$UID" -eq 0 ]; then
     tar () {
 	echo "'tar': use tar-names or tar-numbers instead" >&2
-	return 1
+	false
     }
 fi
 
