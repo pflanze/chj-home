@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for rustaceans on Sat Apr 21 14:30:36 2018.
+# Written by xscreensaver-demo 5.36 for rustaceans on Sat Apr 21 14:37:54 2018.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -109,7 +109,7 @@ programs:								      \
 -				kumppa -root				    \n\
 - GL: 				lament -root				    \n\
 -				moire2 -root				    \n\
-  GL: 				sonar -root				    \n\
+- GL: 				sonar -root				    \n\
 - GL: 				stairs -root				    \n\
 -				truchet -root				    \n\
 -				vidwhacker -root			    \n\
