@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for rustaceans on Sat Apr 21 14:37:54 2018.
+# Written by xscreensaver-demo 5.36 for rustaceans on Sat Apr 21 17:10:14 2018.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -24,15 +24,15 @@ fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
-dpmsEnabled:	False
+dpmsEnabled:	True
 dpmsQuickOff:	False
-dpmsStandby:	2:00:00
-dpmsSuspend:	2:00:00
+dpmsStandby:	0:15:00
+dpmsSuspend:	0:30:00
 dpmsOff:	4:00:00
 grabDesktopImages:  False
 grabVideoFrames:    False
-chooseRandomImages: False
-imageDirectory:	
+chooseRandomImages: True
+imageDirectory:	/home/rustaceans/background/rusty-ship
 
 mode:		random
 selected:	-1
@@ -134,7 +134,7 @@ programs:								      \
 -				webcollage -root			    \n\
 -				xflame -root				    \n\
 				xmatrix -root				    \n\
-- GL: 				gflux -root				    \n\
+  GL: 				gflux -root -speed 0.05 -squares 40	    \n\
 -				nerverot -root				    \n\
 -				xrayswarm -root				    \n\
 -				xspirograph -root			    \n\
@@ -160,9 +160,10 @@ programs:								      \
 				euler2d -root				    \n\
 -				fluidballs -root			    \n\
   GL: 				flurry -root				    \n\
-- GL: 				glblur -root				    \n\
+  GL: 				glblur -root -delay 8547 -blursize 30	    \n\
 - GL: 				glsnake -root				    \n\
--				halftone -root				    \n\
+				halftone -root -delay 14530 -maxspeed	      \
+				  0.0124				    \n\
   GL: 				juggler3d -root				    \n\
 - GL: 				lavalite -root				    \n\
 -				polyominoes -root			    \n\
@@ -187,7 +188,8 @@ programs:								      \
 - GL: 				gleidescope -root			    \n\
 - GL: 				glknots -root				    \n\
   GL: 				glmatrix -root				    \n\
-- GL: 				glslideshow -root			    \n\
+  GL: 				glslideshow -root -duration 10 -zoom 50	      \
+				  -pan 30 -fade 9			    \n\
   GL: 				hypertorus -root			    \n\
   GL: 				jigglypuff -root			    \n\
 -				metaballs -root				    \n\
@@ -197,7 +199,7 @@ programs:								      \
 -				pong -root				    \n\
 -				popsquares -root			    \n\
 - GL: 				surfaces -root				    \n\
--				xanalogtv -root				    \n\
+				xanalogtv -root				    \n\
 				abstractile -root			    \n\
 -				anemotaxis -root			    \n\
 - GL: 				antinspect -root			    \n\
