@@ -166,7 +166,7 @@ lsof () {
 
 # Utils which might be later in PATH than system ones:
 
-ls () { /opt/chj/bin/ls "$@"; } # XX is this still useful?
+ls () { /opt/chj/bin/ls --color=auto "$@"; } # XX is this still useful?
 sort () { /opt/chj/bin/sort "$@"; }
 smplayer () { /opt/chj/bin/smplayer "$@"; }
 zless () { /opt/chj/bin/zless "$@"; }
