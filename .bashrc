@@ -65,7 +65,6 @@ uuu() { cd ../../..; }
 uuuu() { cd ../../../..; }
 uuuuu() { cd ../../../../..; }
 les() { less "$@"; }
-le() { zless "$@"; }
 c() { cd "$@"; }
 cdnewdir() {
     if [ "$#" -eq 1 ]; then
