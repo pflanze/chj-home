@@ -122,7 +122,14 @@ cdpwd() {
 }
 
 unlimit() {
-    ulimit -S -v unlimited
+    if [ $# -eq 0 ]; then
+	ulimit -S -v unlimited
+    else
+	(
+	    ulimit -S -v unlimited
+	    exec "$@"
+	)
+    fi
 }
 
 cs() {
