@@ -143,8 +143,10 @@ cp() { command cp -i "$@"; }
 #rm() { command rm -i "$@"; }
 
 rens () {
-    cd scratch/
-    ren -- "`lastfile .`"
+    if [ scratch != "$(basename "$(pwd)")" ]; then
+	cd scratch
+    fi
+    ren -- "$(lastfile .)"
 }
 
 settitle () {
