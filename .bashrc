@@ -149,6 +149,11 @@ rens () {
     ren -- "$(lastfile .)"
 }
 
+rensn () {
+    cd scratch/
+    ren -- "$(nonrenamed | tail -1 | ls2list)"
+}
+
 settitle () {
     unset PROMPT_COMMAND
     /opt/chj/bin/settitle "$@"
