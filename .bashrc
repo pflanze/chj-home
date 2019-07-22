@@ -154,6 +154,11 @@ rensn () {
     ren -- "$(nonrenamed | tail -1 | ls2list)"
 }
 
+rensnall () {
+    cd scratch/
+    nonrenamed | ls2list | tac |» ren
+}
+
 settitle () {
     unset PROMPT_COMMAND
     /opt/chj/bin/settitle "$@"
