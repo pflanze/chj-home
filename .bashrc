@@ -46,7 +46,7 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
+    eval "$(dircolors -b)"
     ls() { command ls --color=auto "$@"; }
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
@@ -106,10 +106,10 @@ mvcd() {
     fi
 }
 cd_newest_sisterfolder() {
-    cd "`find .. -maxdepth 1 -type d -print0 |grep -zZ -v '^\.*$'|xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt|head -1`"
+    cd "$(find .. -maxdepth 1 -type d -print0 |grep -zZ -v '^\.*$'|xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt|head -1)$"
 }
 cd_newest() {
-    cd "`find . -maxdepth 1 -type d -print0|grep -zZ -v '^\.*$'|xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt|head -1`"
+    cd "$(find . -maxdepth 1 -type d -print0|grep -zZ -v '^\.*$'|xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt|head -1)"
 }
 cdt() {
     if checkcreate-tmp-owner-dir; then
@@ -117,7 +117,7 @@ cdt() {
     fi
 }
 cdpwd() {
-    cd "`pwd -P`"
+    cd "$(pwd -P)"
 }
 
 unlimit() {
