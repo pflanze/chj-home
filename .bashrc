@@ -156,7 +156,7 @@ rensn () {
 
 rensnall () {
     cd scratch/
-    nonrenamed | ls2list | tac |» ren
+    ren-nonrenamed
 }
 
 settitle () {
