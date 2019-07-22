@@ -47,7 +47,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     eval "$(dircolors -b)"
-    ls() { command ls --color=auto "$@"; }
+    ls () { command ls --color=auto "$@"; }
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
 fi
@@ -59,14 +59,14 @@ fi
 #    . /etc/bash_completion
 #fi
 
-u() { cd ..; }
-uu() { cd ../..; }
-uuu() { cd ../../..; }
-uuuu() { cd ../../../..; }
-uuuuu() { cd ../../../../..; }
-les() { less "$@"; }
-c() { cd "$@"; }
-cdnewdir() {
+u () { cd ..; }
+uu () { cd ../..; }
+uuu () { cd ../../..; }
+uuuu () { cd ../../../..; }
+uuuuu () { cd ../../../../..; }
+les () { less "$@"; }
+c () { cd "$@"; }
+cdnewdir () {
     if [ "$#" -eq 1 ]; then
         mkdir "$1" && cd "$1"
     else
@@ -74,7 +74,7 @@ cdnewdir() {
 	false
     fi
 };
-mvcdnewdir() {
+mvcdnewdir () {
     if [ "$#" -gt 1 ]; then
         mvnewdir "$@" && cd "${!#}"
     else
@@ -82,7 +82,7 @@ mvcdnewdir() {
 	false
     fi
 };
-mvcd() {
+mvcd () {
     if [ "$#" -gt 1 ]; then
         if [ -d "${!#}" ]; then
             mv "$@" && cd "${!#}"
@@ -105,22 +105,22 @@ mvcd() {
 	false
     fi
 }
-cd_newest_sisterfolder() {
+cd_newest_sisterfolder () {
     cd "$(find .. -maxdepth 1 -type d -print0 |grep -zZ -v '^\.*$'|xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt|head -1)$"
 }
-cd_newest() {
+cd_newest () {
     cd "$(find . -maxdepth 1 -type d -print0|grep -zZ -v '^\.*$'|xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt|head -1)"
 }
-cdt() {
+cdt () {
     if checkcreate-tmp-owner-dir; then
 	cd "/tmp/$USER"
     fi
 }
-cdpwd() {
+cdpwd () {
     cd "$(pwd -P)"
 }
 
-unlimit() {
+unlimit () {
     if [ $# -eq 0 ]; then
 	ulimit -S -v unlimited
     else
@@ -131,16 +131,16 @@ unlimit() {
     fi
 }
 
-cs() {
+cs () {
     cd ~/scratch
 }
 
-find() { my.find "$@"; }
-df() { my.df "$@"; }
+find () { my.find "$@"; }
+df () { my.df "$@"; }
 
-mv() { command mv -i "$@"; }
-cp() { command cp -i "$@"; }
-#rm() { command rm -i "$@"; }
+mv () { command mv -i "$@"; }
+cp () { command cp -i "$@"; }
+#rm () { command rm -i "$@"; }
 
 rens () {
     if [ scratch != "$(basename "$(pwd)")" ]; then
