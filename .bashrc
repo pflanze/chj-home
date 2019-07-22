@@ -154,7 +154,8 @@ rensn () {
     ren -- "$(nonrenamed | tail -1 | ls2list)"
 }
 
-rensnall () {
+# rename scratch nonrenamed all
+rensna () {
     cd scratch/
     ren-nonrenamed
 }
