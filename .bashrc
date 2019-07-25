@@ -135,6 +135,10 @@ cs () {
     cd ~/scratch
 }
 
+cb () {
+    cd ~/bookmarks
+}
+
 find () { my.find "$@"; }
 df () { my.df "$@"; }
 
