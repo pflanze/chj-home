@@ -136,7 +136,10 @@ cs () {
 }
 
 cb () {
-    cd ~/bookmarks/"${1-}"
+    cd ~/bookmarks
+    if [ $# -ge 1 ]; then
+	cd "$1"
+    fi
 }
 
 find () { my.find "$@"; }
