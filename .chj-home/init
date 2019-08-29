@@ -80,7 +80,9 @@ ln -s /opt/chj/xemacs/init.el .xemacs/
 
 ln -s /opt/chj/emacs/.emacs.d
 
-lesskey
+if [ -e ~/.lesskey ]; then
+    lesskey
+fi
 
 (
     umask 077

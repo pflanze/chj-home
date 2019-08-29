@@ -31,6 +31,8 @@ fi
 # --- General env setup -------
 unset LESSOPEN
 unset LESSCLOSE
+export LESS="-i -M -R"
+
 # not running Gnome anymore, for some reason this env var is set, why
 # no idea, XX.
 unset GNOME_KEYRING_CONTROL
