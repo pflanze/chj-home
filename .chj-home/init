@@ -59,6 +59,9 @@ cat <<EOF > .gitconfig
 [core]
 	excludesfile = ~/.gitignore_global
 
+[advice]
+        waitingForEditor = false
+
 #[gpg]
 #	program = gpg+scrypt
 
