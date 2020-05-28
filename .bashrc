@@ -16,31 +16,31 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+# $HOSTNAME is apparently magical (apparently reading from the
+# kernel), thus use another env var to keep actual hostname
+# definition, for chroots:
+export CHJHOSTNAME="$(head -1 /etc/hostname)"
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 xterm-color)
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;32m\]\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     ;;
 *)
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='\u@$CHJHOSTNAME:\w\$ '
     ;;
 esac
 
-# Comment in the above and uncomment this below for a color prompt
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# Comment the above and uncomment this below for a color prompt
+#PS1='\[\033[01;32m\]\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
-# If this is an xterm set the title to user@host:dir
+# If this is an xterm set the window title, via PROMPT_COMMAND
 case "$TERM" in
-xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-    ;;
-*)
-    ;;
+    xterm*|rxvt*)
+	PROMPT_COMMAND='echo -ne "\033]0;${USER}@$CHJHOSTNAME: ${PWD/$HOME/~}\007"'
+	;;
+    *)
+	;;
 esac
 
 
