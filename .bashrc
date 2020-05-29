@@ -218,6 +218,10 @@ lsof () {
     # -P = no port names
 }
 
+rxvt-fontsize () {
+    eval "$(/opt/chj/bin/rxvt-fontsize "$@")"
+}
+
 # Utils which might be later in PATH than system ones:
 
 ls () { /opt/chj/bin/ls --color=auto "$@"; } # XX is this still useful?
