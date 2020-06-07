@@ -72,7 +72,13 @@ _cd_then () {
     local to="$1"; shift
     if [ $# = 1 ]; then
         local old=$(pwd)
-        cd "$to" && cd "$1" || cd "$old"
+	local oldOLDPWD=$OLDPWD
+        if cd "$to" && cd "$1"; then
+	    OLDPWD=$old
+	else
+	    cd "$old"
+	    OLDPWD=$oldOLDPWD
+	fi
     elif [ $# -gt 1 ]; then
         echo "too many arguments"
 	false
