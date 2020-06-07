@@ -59,11 +59,20 @@ fi
 #    . /etc/bash_completion
 #fi
 
-u () { cd ..; }
-uu () { cd ../..; }
-uuu () { cd ../../..; }
-uuuu () { cd ../../../..; }
-uuuuu () { cd ../../../../..; }
+maybe_cd () {
+    if [ $# = 1 ]; then
+        cd "$1"
+    elif [ $# -gt 1 ]; then
+        echo "too many arguments"
+	false
+    fi
+}
+
+u () { cd ..; maybe_cd "$@"; }
+uu () { cd ../..; maybe_cd "$@"; }
+uuu () { cd ../../..; maybe_cd "$@"; }
+uuuu () { cd ../../../..; maybe_cd "$@"; }
+uuuuu () { cd ../../../../..; maybe_cd "$@"; }
 les () { less "$@"; }
 c () { cd "$@"; }
 cdnewdir () {
