@@ -59,7 +59,7 @@ fi
 #    . /etc/bash_completion
 #fi
 
-maybe_cd () {
+possibly_cd () {
     if [ $# = 1 ]; then
         cd "$1"
     elif [ $# -gt 1 ]; then
@@ -68,11 +68,24 @@ maybe_cd () {
     fi
 }
 
-u () { cd ..; maybe_cd "$@"; }
-uu () { cd ../..; maybe_cd "$@"; }
-uuu () { cd ../../..; maybe_cd "$@"; }
-uuuu () { cd ../../../..; maybe_cd "$@"; }
-uuuuu () { cd ../../../../..; maybe_cd "$@"; }
+_cd_then () {
+    local to="$1"; shift
+    if [ $# = 1 ]; then
+        local old=$(pwd)
+        cd "$to" && cd "$1" || cd "$old"
+    elif [ $# -gt 1 ]; then
+        echo "too many arguments"
+	false
+    else
+	cd "$to"
+    fi
+}
+
+u () { _cd_then .. "$@"; }
+uu () { _cd_then ../.. "$@"; }
+uuu () { _cd_then ../../.. "$@"; }
+uuuu () { _cd_then ../../../.. "$@"; }
+uuuuu () { _cd_then ../../../../.. "$@"; }
 les () { less "$@"; }
 c () { cd "$@"; }
 cdnewdir () {
