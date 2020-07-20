@@ -1,1 +1,2 @@
 initialZoom width
+urlCommand "to-clipboard '%s'"
