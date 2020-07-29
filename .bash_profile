@@ -45,12 +45,12 @@ if [ -n "${DISPLAY-}" ]; then
     xset -b
 fi
 
+# cj's key (since you're trusting his repo already, why not also trust
+# his key?)
+export VERIFY_SIG_ACCEPT_KEYS=A54A1D7CA1F94C866AC81A1F0FA5B21104EDB072
+
 
 # --- Personal env setup: -------
-# see ~/.bash_profile_local
-
-
-# --- End -------------------------------------
 if [ -f ~/.bash_profile_local ]; then
     source ~/.bash_profile_local
 else
