@@ -37,7 +37,8 @@ export LESS="-i -M -R"
 # no idea, XX.
 unset GNOME_KEYRING_CONTROL
 export COLUMNS
-export HISTSIZE=3000
+export HISTCONTROL=ignoredups
+export HISTSIZE=5000
 
 ulimit -S -v 3200000  # note: can override in .bash_profile_local
 
