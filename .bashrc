@@ -13,11 +13,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-# $HOSTNAME is apparently magical (apparently reading from the
-# kernel), thus use another env var to keep actual hostname
-# definition, for chroots:
-export CHJHOSTNAME="$(head -1 /etc/hostname)"
-
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 xterm-color)

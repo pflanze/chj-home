@@ -9,6 +9,11 @@ if [ "`readlink -f "$PWD"`" = "`readlink -f "$HOME"`" ]; then
     PWD=$HOME
 fi
 
+# $HOSTNAME is apparently magical (apparently reading from the
+# kernel), thus use another env var to keep actual hostname
+# definition, for chroots:
+export CHJHOSTNAME="$(head -1 /etc/hostname)"
+
 # the default umask is set in /etc/login.defs
 # umask 002
 
