@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# NOTE: you can use ~/.bashrc_local for local changes (i.e. those that
+# shouldn't make it to the Git repo), it is included at the end of
+# this file.
+
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -41,13 +45,6 @@ if [ "$TERM" != "dumb" ]; then
     eval "$(dircolors -b)"
     ls () { command ls --color=auto "$@"; }
 fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ]; then
-#    . /etc/bash_completion
-#fi
 
 possibly_cd () {
     if [ $# = 1 ]; then
@@ -231,6 +228,17 @@ gv () { /opt/chj/bin/gv "$@"; }
 
 
 # --- End -------------------------------------
+
+# You may want to copy this to ~/.bashrc_local (and add other local
+# changes):
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+#if [ -f /etc/bash_completion ]; then
+#    . /etc/bash_completion
+#fi
+
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
