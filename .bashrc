@@ -19,16 +19,13 @@ shopt -s checkwinsize
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-xterm-color)
+xterm-color|xterm)
     PS1='\[\033[01;32m\]\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     ;;
 *)
     PS1='\u@$CHJHOSTNAME:\w\$ '
     ;;
 esac
-
-# Comment the above and uncomment this below for a color prompt
-#PS1='\[\033[01;32m\]\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # If this is an xterm set the window title, via PROMPT_COMMAND
 case "$TERM" in
