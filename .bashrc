@@ -131,6 +131,9 @@ cd_newest_sisterfolder () {
 cd_newest () {
     cd "$(find . -maxdepth 1 -type d -print0|grep -zZ -v '^\.*$'|xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt|head -1)"
 }
+cdn () {
+    cd_newest
+}
 cdt () {
     if checkcreate-tmp-owner-dir; then
 	cd "/tmp/$USER"
