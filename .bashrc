@@ -36,12 +36,10 @@ case "$TERM" in
 esac
 
 
-# enable color support of ls and also add handy aliases
+# enable color support of ls
 if [ "$TERM" != "dumb" ]; then
     eval "$(dircolors -b)"
     ls () { command ls --color=auto "$@"; }
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
 fi
 
 # enable programmable completion features (you don't need to enable
