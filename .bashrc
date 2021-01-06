@@ -124,7 +124,11 @@ cd_newest () {
     cd "$(find . -maxdepth 1 -type d -print0|grep -zZ -v '^\.*$'|xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt|head -1)"
 }
 cdn () {
-    cd_newest
+    if [ $# -eq 0 ]; then
+	cd_newest
+    else
+	cdnewdir "$@"
+    fi
 }
 cdt () {
     if checkcreate-tmp-owner-dir; then
