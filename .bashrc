@@ -160,6 +160,12 @@ cb () {
 	cd "$1"
     fi
 }
+cj () {
+    cd ~/bookmarks/j
+    if [ $# -ge 1 ]; then
+	cd "$1"
+    fi
+}
 
 find () { my.find "$@"; }
 df () { my.df "$@"; }
