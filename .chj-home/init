@@ -20,8 +20,6 @@ cancel() {
     exit 1
 }
 
-gpg --import /opt/chj/chjize/cj-key.asc || true
-
 if read -e -p "Please enter your full name: " fullname; then
     if read -e -p "Please enter your (bare) email address: " email; then
 	echo "$fullname" > .chj-home_fullname
@@ -97,6 +95,8 @@ chmod go-w .ssh/authorized_keys
 touch .chj-home/init-done
 
 ln -s /opt/chj/emacs/bin/* bin || true
+
+gpg --import /opt/chj/chjize/cj-key.asc || true
 
 set +x
 
