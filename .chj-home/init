@@ -88,6 +88,11 @@ fi
     umask 077
     mkdir -p tmp .ssh DROP scratch bin
 )
+(
+    set -eu
+    cd scratch
+    /opt/chj/bin/cj-git-init || true
+)
 
 chmod a+wxt,g+s DROP
 touch .ssh/authorized_keys
