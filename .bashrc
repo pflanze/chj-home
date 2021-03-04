@@ -80,7 +80,7 @@ les () { less "$@"; }
 c () { cd "$@"; }
 cdnewdir () {
     if [ "$#" -eq 1 ]; then
-        mkdir "$1" && cd "$1"
+        mkdir -p "$1" && cd "$1"
     else
         echo One argument required
 	false
