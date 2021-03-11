@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
+# Set $USER if not already set (this is necessary when starting the
+# desktop via crontab (VNC server).)
+export USER=${USER-$(/opt/chj/bin/user "$UID")}
 
 # use path as given in HOME as PWD [if we're in home] to avoid
 # symlinked paths to be shown
