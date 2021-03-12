@@ -20,12 +20,30 @@ cancel() {
     exit 1
 }
 
-if read -e -p "Please enter your full name: " fullname; then
-    if read -e -p "Please enter your (bare) email address: " email; then
-	echo "$fullname" > .chj-home_fullname
-	echo "$email" > .chj-home_email
+set_fn_email() {
+    local fullname
+    local email
+    fullname=$1
+    email=$2
+    echo "$fullname" > .chj-home_fullname
+    echo "$email" > .chj-home_email
+}
+
+if read -e -p "Please enter your email address (either bare or with full name): " email; then
+    if bareemail=$(printf '%s' "$email" | perl -wne 'm{<([^<>]+)>} or exit 1; print $1'); then
+        if fullname=$(printf '%s' "$email" | perl -wne 'm{^(.*?)\s*<[^<>]+>\s*\z} or exit 1; print $1'); then
+            set_fn_email "$fullname" "$bareemail"
+            # and forever ugly imperative code:
+            email=$bareemail
+        else
+            echo "invalid mail address with full name"
+        fi
     else
-	cancel
+        if read -e -p "Please enter your full name: " fullname; then
+            set_fn_email "$fullname" "$email"
+        else
+            cancel
+        fi
     fi
 else
     cancel
