@@ -109,7 +109,10 @@ fi
 (
     set -eu
     cd scratch
-    /opt/chj/bin/cj-git-init || true
+    if /opt/chj/bin/cj-git-init; then
+	touch .git/scoma-no-user-group
+	touch .git/scoma-no-push
+    fi
 )
 
 chmod a+wxt,g+s DROP
