@@ -14,6 +14,9 @@ if [ -e .chj-home/init-done ]; then
     exit 0
 fi
 
+# fix perms (make private):
+chmod go-rwx .links2 .vnc
+
 
 cancel() {
     echo "$0: cancelled due to missing answer."
