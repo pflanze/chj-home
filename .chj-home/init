@@ -15,7 +15,11 @@ if [ -e .chj-home/init-done ]; then
 fi
 
 # fix perms (make private):
-chmod go-rwx .links2 .vnc
+for d in  .links2 .vnc; do
+    if [ -e "$d" ]; then
+	chmod go-rwx "$d"
+    fi
+done
 
 
 cancel() {
