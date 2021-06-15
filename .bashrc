@@ -20,7 +20,7 @@ shopt -s checkwinsize
 __ps1_show_exitcode () {
     local v=$?
     if [ "$v" -ne 0 ]; then
-	echo -ne '\033[01;41m'"$v"'\033[00m \033[01;32m';
+	echo -ne '\033[01;41m'"$v"'\033[00m\n\033[01;32m';
     else
 	echo -ne '\033[01;32m';
     fi
