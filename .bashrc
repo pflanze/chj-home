@@ -19,6 +19,9 @@ shopt -s checkwinsize
 
 __ps1_show_exitcode () {
     local exitcode=$?
+    # Have to make shell aware of non-printing character sequences,
+    # and for this have to use \001 \002 over \[ \] .
+    # (Also see https://mywiki.wooledge.org/BashFAQ/053 .)
     if [ "$exitcode" -ne 0 ]; then
 	echo -ne '\001\033[01;41m\002'
 	echo -n "$exitcode"
