@@ -17,10 +17,19 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
+__ps1_show_exitcode () {
+    local v=$?
+    if [ "$v" -ne 0 ]; then
+	echo -ne "$v "'\033[01;41m';
+    else
+	echo -ne '\033[01;32m';
+    fi
+}
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 xterm-color|xterm)
-    PS1='\[\033[01;32m\]\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='$(__ps1_show_exitcode)\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     ;;
 *)
     PS1='\u@$CHJHOSTNAME:\w\$ '
