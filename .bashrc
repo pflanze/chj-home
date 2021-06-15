@@ -26,6 +26,19 @@ __ps1_show_exitcode () {
     fi
 }
 
+__prompt_command () {
+    # If this is an xterm set the window title
+    case "$TERM" in
+	xterm*|rxvt*)
+	    echo -ne "\033]0;${USER}@$CHJHOSTNAME: ${PWD/$HOME/~}\007"
+	    ;;
+	*)
+	    ;;
+    esac
+}
+
+PROMPT_COMMAND=__prompt_command
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 xterm-color|xterm)
@@ -34,15 +47,6 @@ xterm-color|xterm)
 *)
     PS1='\u@$CHJHOSTNAME:\w\$ '
     ;;
-esac
-
-# If this is an xterm set the window title, via PROMPT_COMMAND
-case "$TERM" in
-    xterm*|rxvt*)
-	PROMPT_COMMAND='echo -ne "\033]0;${USER}@$CHJHOSTNAME: ${PWD/$HOME/~}\007"'
-	;;
-    *)
-	;;
 esac
 
 
