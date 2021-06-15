@@ -18,16 +18,28 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
 __ps1_show_exitcode () {
-    local v=$?
-    if [ "$v" -ne 0 ]; then
-	echo -ne '\033[01;41m'"$v"'\033[00m \033[01;32m';
+    #local exitcode=$?
+    if [ "$exitcode" -ne 0 ]; then
+	echo -ne '\033[01;41m'"$exitcode"'\033[00m \033[01;32m';
     else
 	echo -ne '\033[01;32m';
     fi
 }
 
 __prompt_command () {
-    # If this is an xterm set the window title
+    local exitcode=$?
+
+    # set a fancy prompt (non-color, unless we know we "want" color)
+    case "$TERM" in
+    xterm-color|xterm)
+	PS1="$(__ps1_show_exitcode)"'\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	;;
+    *)
+	PS1='\u@$CHJHOSTNAME:\w\$ '
+	;;
+    esac
+
+    # If this is an X terminal, set the window title
     case "$TERM" in
 	xterm*|rxvt*)
 	    echo -ne "\033]0;${USER}@$CHJHOSTNAME: ${PWD/$HOME/~}\007"
@@ -38,16 +50,6 @@ __prompt_command () {
 }
 
 PROMPT_COMMAND=__prompt_command
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-xterm-color|xterm)
-    PS1='$(__ps1_show_exitcode)\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    ;;
-*)
-    PS1='\u@$CHJHOSTNAME:\w\$ '
-    ;;
-esac
 
 
 # enable color support of ls
