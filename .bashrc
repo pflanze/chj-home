@@ -23,7 +23,7 @@ __ps1_show_exitcode () {
 	echo -ne '\001\033[01;41m\002'
 	echo -n "$exitcode"
 	echo -ne '\001\033[00m\002'
-	echo -ne '\n'
+	echo -n ' '
 	echo -ne '\001\033[01;32m\002'
     else
 	echo -ne '\001\033[01;32m\002'
