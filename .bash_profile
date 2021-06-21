@@ -48,8 +48,6 @@ export COLUMNS
 export HISTCONTROL=ignoredups
 export HISTSIZE=5000
 
-ulimit -S -v 3200000  # note: can override in .bash_profile_local
-
 if [ -n "${DISPLAY-}" ]; then
     xset -b
 fi
