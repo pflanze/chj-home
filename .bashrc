@@ -137,11 +137,17 @@ mvcd () {
 	false
     fi
 }
+_ls_newest () {
+    find "$1" -maxdepth 1 -type d -print0 | \
+	grep -zZ -v '^\.*$' | \
+	xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt |
+	head -1
+}
 cd_newest_sisterfolder () {
-    cd "$(find .. -maxdepth 1 -type d -print0 | grep -zZ -v '^\.*$' | xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt | head -1)$"
+    cd "$(_ls_newest ..)$"
 }
 cd_newest () {
-    cd "$(find . -maxdepth 1 -type d -print0 | grep -zZ -v '^\.*$' | xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt | head -1)"
+    cd "$(_ls_newest .)"
 }
 cdn () {
     if [ $# -eq 0 ]; then
