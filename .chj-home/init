@@ -118,6 +118,7 @@ fi
     cd scratch
     if /opt/chj/bin/cj-git-init; then
 	echo no-user-group >> .METADATA-v2.options
+	echo HEUTE >> .METADATA-v2.ignore
 	touch .git/scoma-no-push
     fi
 )
