@@ -21,6 +21,11 @@ for d in  .links2 .vnc; do
     fi
 done
 
+if [ -e .xscreensaver ]; then
+    echo "File .xscreensaver already exists, not touching it."
+else
+    cp .chj-home/.xscreensaver .
+fi
 
 cancel() {
     echo "$0: cancelled due to missing answer."
