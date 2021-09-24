@@ -14,12 +14,20 @@ if [ -e .chj-home/init-done ]; then
     exit 0
 fi
 
-# fix perms (make private):
+# Fix perms (make private):
 for d in  .links2 .vnc; do
     if [ -e "$d" ]; then
 	chmod go-rwx "$d"
     fi
 done
+
+# More fix perms (make group private):
+for d in . Pictures/ Documents/ Downloads/ Desktop/ Music/ Templates/ Videos/; do
+    if [ -e "$d" ]; then
+	chmod o-rwx "$d"
+    fi
+done
+
 
 if [ -e .xscreensaver ]; then
     echo "File .xscreensaver already exists, not touching it."
