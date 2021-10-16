@@ -156,6 +156,19 @@ cdn () {
 	cdnewdir "$@"
     fi
 }
+cgdi () {
+    local res=$(gdi "$@")
+    # I forgot how to do this with builtins:
+    if [ -n "$res" ]; then
+        if [ "$(printf '%s' "$res" | wc -l)" -eq 0 ]; then
+            cd "$res"
+        else
+            printf 'Need exactly one result, found:\n%s' "$res"
+        fi
+    else
+        echo "Nothing found."
+    fi
+}
 cdt () {
     if checkcreate-tmp-owner-dir; then
 	cd "/tmp/$USER"
