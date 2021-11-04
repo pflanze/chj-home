@@ -163,10 +163,12 @@ cgdi () {
         if [ "$(printf '%s' "$res" | wc -l)" -eq 0 ]; then
             cd "$res"
         else
-            printf 'Need exactly one result, found:\n%s' "$res"
+            printf '*** Need exactly one result, found:\n%s\n' "$res"
+            false
         fi
     else
         echo "Nothing found."
+        false
     fi
 }
 cdt () {
