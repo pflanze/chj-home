@@ -156,8 +156,8 @@ cdn () {
 	cdnewdir "$@"
     fi
 }
-cgdi () {
-    local res=$(gdi "$@")
+_cgd_ () {
+    local res=$1
     # I forgot how to do this with builtins:
     if [ -n "$res" ]; then
         if [ "$(printf '%s' "$res" | wc -l)" -eq 0 ]; then
@@ -170,6 +170,12 @@ cgdi () {
         echo "Nothing found."
         false
     fi
+}
+cgd () {
+    _cgd_ "$(gd "$@")"
+}
+cgdi () {
+    _cgd_ "$(gdi "$@")"
 }
 cdt () {
     if checkcreate-tmp-owner-dir; then
