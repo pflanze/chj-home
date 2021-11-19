@@ -177,6 +177,12 @@ cgd () {
 cgdi () {
     _cgd_ "$(gdi "$@")"
 }
+cgi () {
+    _cgd_ "$(gi "$@")"
+}
+cgii () {
+    _cgd_ "$(gii "$@")"
+}
 cdt () {
     if checkcreate-tmp-owner-dir; then
 	cd "/tmp/$USER"
