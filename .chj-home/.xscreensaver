@@ -1,9 +1,9 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.45 for chris on Fri Nov 19 17:17:27 2021.
+# Written by xscreensaver-demo 5.45 for chris on Sat Nov 20 02:39:15 2021.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
-cycle:		0:10:00
+cycle:		0:09:00
 lock:		True
 lockTimeout:	0:01:00
 passwdTimeout:	0:00:30
@@ -26,9 +26,9 @@ ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
 dpmsEnabled:	True
 dpmsQuickOff:	False
-dpmsStandby:	0:01:00
-dpmsSuspend:	0:01:00
-dpmsOff:	0:01:00
+dpmsStandby:	0:20:00
+dpmsSuspend:	0:20:00
+dpmsOff:	0:20:00
 grabDesktopImages:  False
 grabVideoFrames:    False
 chooseRandomImages: False
