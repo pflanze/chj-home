@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.45 for chris on Sat Nov 27 03:04:22 2021.
+# Written by xscreensaver-demo 5.45 for chris on Sat Nov 27 04:54:28 2021.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -34,8 +34,8 @@ grabVideoFrames:    False
 chooseRandomImages: False
 imageDirectory:	
 
-mode:		random
-selected:	-1
+mode:		blank
+selected:	227
 
 textMode:	program
 textLiteral:	XScreenSaver
