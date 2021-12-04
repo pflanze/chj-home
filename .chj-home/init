@@ -28,12 +28,13 @@ for d in . Pictures/ Documents/ Downloads/ Desktop/ Music/ Templates/ Videos/; d
     fi
 done
 
-
-if [ -e .xscreensaver ]; then
-    echo "File .xscreensaver already exists, not touching it."
-else
-    cp .chj-home/.xscreensaver .
-fi
+for file in .xscreensaver .gdbinit; do
+    if [ -e "$file" ]; then
+        echo "File $file already exists, not touching it."
+    else
+        cp ".chj-home/$file" .
+    fi
+done
 
 cancel() {
     echo "$0: cancelled due to missing answer."
