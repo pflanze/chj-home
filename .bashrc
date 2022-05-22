@@ -156,6 +156,26 @@ cdn () {
 	cdnewdir "$@"
     fi
 }
+cdnn () {
+    if [ $# -eq 0 ]; then
+	cd_newest
+        cd_newest
+    else
+	cd_newest
+        cdnewdir "$@"
+    fi
+}
+cdnnn () {
+    if [ $# -eq 0 ]; then
+	cd_newest
+	cd_newest
+        cd_newest
+    else
+	cd_newest
+	cd_newest
+        cdnewdir "$@"
+    fi
+}
 _cgd_ () {
     local res=$1
     # I forgot how to do this with builtins:
