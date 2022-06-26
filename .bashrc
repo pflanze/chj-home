@@ -313,6 +313,7 @@ open () { /opt/chj/bin/open "$@"; }
 suxterm () { /opt/chj/bin/suxterm "$@"; }
 pdftotext () { /opt/chj/bin/pdftotext "$@"; }
 gv () { /opt/chj/bin/gv "$@"; }
+wg () { /opt/chj/bin/wg "$@"; }
 
 
 # --- End -------------------------------------
