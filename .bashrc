@@ -138,10 +138,7 @@ mvcd () {
     fi
 }
 _ls_newest () {
-    find "$1" -maxdepth 1 -type d -print0 | \
-	grep -P -zZ -v '^\.\.?(/\.git)?$' | \
-	xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt |
-	head -1
+    lastdir --full -a -- "$@"
 }
 cd_newest_sisterfolder () {
     cd "$(_ls_newest ..)$"
