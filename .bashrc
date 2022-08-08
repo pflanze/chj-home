@@ -185,7 +185,7 @@ _cgd_ () {
     local index=""
     local args
     declare -a args
-    if printf '%s' "$last" | egrep -q '^[0-9]+$'; then
+    if [ $# -gt 1 ] && { printf '%s' "$last" | egrep -q '^[0-9]+$'; }; then
         index="$last"
         args=("${@:1:$(( $# - 1 ))}")
     else
