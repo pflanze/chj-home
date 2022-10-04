@@ -138,7 +138,7 @@ mvcd () {
     fi
 }
 _ls_newest () {
-    lastdir --full -a -- "$@"
+    lastdir --fullpath -a -- "$@"
 }
 cd_newest_sisterfolder () {
     cd "$(_ls_newest ..)$"
