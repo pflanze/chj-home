@@ -45,7 +45,7 @@ XEmacs*menubar*FontSet: -adobe-helvetica-bold-r-normal-*-12-*-*-*-*-*-*-*
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-URxvt.geometry: 80x25
+URxvt.geometry: 110x30
 
 URxvt.scrollTtyOutput: False
 URxvt.scrollTtyKeypress: True
