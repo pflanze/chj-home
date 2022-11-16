@@ -19,7 +19,7 @@ keycode 134 = backslash brokenbar
 
 keycode 135 = Alt_L
 
-keycode 107 = Control_R Control_R Control_R Control_R Control_R Control_R Control_R Control_R
+keycode 107 = Print
 
 add Control = Control_R
 
