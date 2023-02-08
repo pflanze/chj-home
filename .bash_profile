@@ -52,9 +52,9 @@ if [ -n "${DISPLAY-}" ]; then
     xset -b
 fi
 
-# cj's key (since you're trusting his repo already, why not also trust
-# his key?)
-export VERIFY_SIG_ACCEPT_KEYS=A54A1D7CA1F94C866AC81A1F0FA5B21104EDB072
+# cj's keys (since you're trusting his repo already, why not also trust
+# his keys?)
+export VERIFY_SIG_ACCEPT_KEYS="A54A1D7CA1F94C866AC81A1F0FA5B21104EDB072, 7312F47D9436FBF8C3F80CF2748247966F366AE9"
 
 
 # --- Personal env setup: -------
