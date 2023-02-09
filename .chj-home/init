@@ -107,6 +107,9 @@ cat <<EOF > .gitconfig
 #[push]
 #	default = simple
 # old git can*not* deal with this
+
+[pull]
+        rebase = false
 EOF
 
 set +eu
