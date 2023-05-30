@@ -138,10 +138,7 @@ mvcd () {
     fi
 }
 _ls_newest () {
-    find "$1" -maxdepth 1 -type d -print0 | \
-	grep -P -zZ -v '^\.\.?(/\.git)?$' | \
-	xargs -0 -s 129023 -n 129023 --exit --no-run-if-empty ls -dt |
-	head -1
+    lastdir --fullpath -a -- "$@"
 }
 cd_newest_sisterfolder () {
     cd "$(_ls_newest ..)$"
@@ -156,33 +153,94 @@ cdn () {
 	cdnewdir "$@"
     fi
 }
+cdnn () {
+    if [ $# -eq 0 ]; then
+	cd_newest
+        cd_newest
+    else
+	cd_newest
+        cdnewdir "$@"
+    fi
+}
+cdnnn () {
+    if [ $# -eq 0 ]; then
+	cd_newest
+	cd_newest
+        cd_newest
+    else
+	cd_newest
+	cd_newest
+        cdnewdir "$@"
+    fi
+}
+
 _cgd_ () {
-    local res=$1
-    # I forgot how to do this with builtins:
+    local gd_="$1"
+    shift
+    if [ $# = 0 ]; then
+        echo "Please give name-regex (and optionally index into result list)" >&2
+        return 1
+    fi
+    local last="${@:$#:1}"
+    local index=""
+    local args
+    declare -a args
+    if [ $# -gt 1 ] && { printf '%s' "$last" | egrep -q '^[0-9]+$'; }; then
+        index="$last"
+        args=("${@:1:$(( $# - 1 ))}")
+    else
+        args=("$@")
+    fi
+    local res
+    if ! res="$("$gd_" "${args[@]}")"; then
+        return 1
+    fi
+    # (XX do these with builtins?)
     if [ -n "$res" ]; then
-        if [ "$(printf '%s' "$res" | wc -l)" -eq 0 ]; then
+        local len
+        len0="$(printf '%s' "$res" | wc -l)"
+        if [ "$len0" -eq 0 ]; then
             cd "$res"
         else
-            printf '*** Need exactly one result, found:\n%s\n' "$res"
-            false
+            if [ -n "$index" ]; then
+                if [ "$index" -le "$len0" ]; then
+                    local item
+                    if ! item="$(printf "%s" "$res" | skiplines "$index")"; then
+                        return 1
+                    fi
+                    if ! item="$(printf "%s" "$item" | head -1)"; then
+                        return 1
+                    fi
+                    cd "$item"
+                else
+                    echo "Index is pointing behind last item" >&2
+                    false
+                fi
+            else
+                local numbered
+                numbered=$(printf '%s' "$res" | linenumbers)
+                printf '*** More than one result, please give index:\n%s\n' "$numbered" >&2
+                false
+            fi
         fi
     else
-        echo "Nothing found."
+        echo "Nothing found." >&2
         false
     fi
 }
 cgd () {
-    _cgd_ "$(gd "$@")"
+    _cgd_ gd "$@"
 }
 cgdi () {
-    _cgd_ "$(gdi "$@")"
+    _cgd_ gdi "$@"
 }
 cgi () {
-    _cgd_ "$(gi "$@")"
+    _cgd_ gi "$@"
 }
 cgii () {
-    _cgd_ "$(gii "$@")"
+    _cgd_ gii "$@"
 }
+
 cdt () {
     if checkcreate-tmp-owner-dir; then
 	cd "/tmp/$USER"
@@ -222,6 +280,13 @@ cj () {
 
 ce () {
     cd ~/exchange
+    if [ $# -ge 1 ]; then
+	cd "$1"
+    fi
+}
+
+ct () {
+    cd ~/todo
     if [ $# -ge 1 ]; then
 	cd "$1"
     fi
@@ -293,6 +358,7 @@ open () { /opt/chj/bin/open "$@"; }
 suxterm () { /opt/chj/bin/suxterm "$@"; }
 pdftotext () { /opt/chj/bin/pdftotext "$@"; }
 gv () { /opt/chj/bin/gv "$@"; }
+wg () { /opt/chj/bin/wg "$@"; }
 
 
 # --- End -------------------------------------
