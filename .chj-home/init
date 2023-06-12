@@ -117,9 +117,6 @@ set -x
 
 ln -s /opt/chj/emacs/.emacs
 
-mkdir .xemacs/ || true
-ln -s /opt/chj/xemacs/init.el .xemacs/
-
 ln -s /opt/chj/emacs/.emacs.d
 
 if [ -e ~/.lesskey ]; then
