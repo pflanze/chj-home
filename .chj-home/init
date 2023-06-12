@@ -146,6 +146,7 @@ chmod go-w .ssh/authorized_keys
 touch .chj-home/init-done
 
 gpg --import /opt/chj/chjize/cj-key.asc || true
+gpg --import /opt/chj/chjize/cj-key-2.asc || true
 
 set +x
 
