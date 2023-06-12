@@ -115,9 +115,12 @@ EOF
 set +eu
 set -x
 
-ln -s /opt/chj/emacs/.emacs
+/opt/chj/chjize/bin/chj-checkout _ignored_ https://github.com/pflanze/chj-emacs .chj-emacs '^v(\d+)$'
 
-ln -s /opt/chj/emacs/.emacs.d
+ln -s .chj-emacs/.emacs
+ln -s .chj-emacs/.emacs.d
+ln -s .chj-emacs/bin/* bin || true
+
 
 if [ -e ~/.lesskey ]; then
     lesskey
@@ -142,10 +145,12 @@ touch .ssh/authorized_keys
 chmod go-w .ssh/authorized_keys
 touch .chj-home/init-done
 
-ln -s /opt/chj/emacs/bin/* bin || true
-
 gpg --import /opt/chj/chjize/cj-key.asc || true
 
 set +x
 
-echo "NOTE: Your answers have been written to .chj-home_fullname, .chj-home_email, and the files .bash_profile_local and .gitconfig have been generated."
+echo "NOTE: Your answers have been written to .chj-home_fullname, .chj-home_email,"
+echo "      and the files .bash_profile_local and .gitconfig have been generated."
+echo "NOTE: Run 'cd .chj-emacs && make' if you want to use the full set of emacs"
+echo "      functionality now."
+
