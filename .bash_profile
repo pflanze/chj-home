@@ -48,7 +48,7 @@ export LESS="-i -M -R"
 unset GNOME_KEYRING_CONTROL
 export COLUMNS
 export HISTCONTROL=ignoredups
-export HISTSIZE=5000
+export HISTSIZE=10000
 
 if [ -n "${DISPLAY-}" ]; then
     xset -b
