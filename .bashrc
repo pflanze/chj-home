@@ -96,6 +96,7 @@ uu () { _cd_then ../.. "$@"; }
 uuu () { _cd_then ../../.. "$@"; }
 uuuu () { _cd_then ../../../.. "$@"; }
 uuuuu () { _cd_then ../../../../.. "$@"; }
+ul () { cd ..;  l "$@"; }
 les () { less "$@"; }
 c () { cd "$@"; }
 cdnewdir () {
