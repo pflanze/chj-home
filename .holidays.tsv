@@ -1,0 +1,109 @@
+# this is read by gen-calendar from chj-scripts
+
+# https://feiertage-ch.ch/feiertage-2024/
+#Feiertag 	Datum 	Woche
+Neujahr 2024 	Montag 1 Januar 2024 	01
+Berchtoldstag 2024 	Dienstag 2 Januar 2024 	01
+Heilige Drei Könige 2024 	Samstag 6 Januar 2024 	01
+Josefstag 2024 	Dienstag 19 März 2024 	12
+Karfreitag 2024 	Freitag 29 März 2024 	13
+Ostermontag 2024 	Montag 1 April 2024 	14
+Tag der Arbeit 2024 	Mittwoch 1 Mai 2024 	18
+Auffahrt 2024 	Donnerstag 9 Mai 2024 	19
+Pfingstmontag 2024 	Montag 20 Mai 2024 	21
+Fronleichnam 2024 	Donnerstag 30 Mai 2024 	22
+Bundesfeiertag 2024 	Donnerstag 1 August 2024 	31
+Mariä Himmelfahrt 2024 	Donnerstag 15 August 2024 	33
+Allerheiligen 2024 	Freitag 1 November 2024 	44
+Mariä Empfängnis 2024 	Sonntag 8 Dezember 2024 	49
+Weihnachtstag 2024 	Mittwoch 25 Dezember 2024 	52
+Stephanstag 2024 	Donnerstag 26 Dezember 2024 	52
+
+# https://feiertage-ch.ch/feiertage-2025/
+#Feiertag 	Datum 	Woche
+Neujahr 2025 	Mittwoch 1 Januar 2025 	01
+Berchtoldstag 2025 	Donnerstag 2 Januar 2025 	01
+Heilige Drei Könige 2025 	Montag 6 Januar 2025 	02
+Josefstag 2025 	Mittwoch 19 März 2025 	12
+Karfreitag 2025 	Freitag 18 April 2025 	16
+Ostermontag 2025 	Montag 21 April 2025 	17
+Tag der Arbeit 2025 	Donnerstag 1 Mai 2025 	18
+Auffahrt 2025 	Donnerstag 29 Mai 2025 	22
+Pfingstmontag 2025 	Montag 9 Juni 2025 	24
+Fronleichnam 2025 	Donnerstag 19 Juni 2025 	25
+Bundesfeiertag 2025 	Freitag 1 August 2025 	31
+Mariä Himmelfahrt 2025 	Freitag 15 August 2025 	33
+Allerheiligen 2025 	Samstag 1 November 2025 	44
+Mariä Empfängnis 2025 	Montag 8 Dezember 2025 	50
+Weihnachtstag 2025 	Donnerstag 25 Dezember 2025 	52
+Stephanstag 2025 	Freitag 26 Dezember 2025 	52
+
+# https://feiertage-ch.ch/feiertage-2026/
+#Feiertag 	Datum 	Woche
+Neujahr 2026 	Donnerstag 1 Januar 2026 	01
+Berchtoldstag 2026 	Freitag 2 Januar 2026 	01
+Heilige Drei Könige 2026 	Dienstag 6 Januar 2026 	02
+Josefstag 2026 	Donnerstag 19 März 2026 	12
+Karfreitag 2026 	Freitag 3 April 2026 	14
+Ostermontag 2026 	Montag 6 April 2026 	15
+Tag der Arbeit 2026 	Freitag 1 Mai 2026 	18
+Auffahrt 2026 	Donnerstag 14 Mai 2026 	20
+Pfingstmontag 2026 	Montag 25 Mai 2026 	22
+Fronleichnam 2026 	Donnerstag 4 Juni 2026 	23
+Bundesfeiertag 2026 	Samstag 1 August 2026 	31
+Mariä Himmelfahrt 2026 	Samstag 15 August 2026 	33
+Allerheiligen 2026 	Sonntag 1 November 2026 	44
+Mariä Empfängnis 2026 	Dienstag 8 Dezember 2026 	50
+Weihnachtstag 2026 	Freitag 25 Dezember 2026 	52
+Stephanstag 2026 	Samstag 26 Dezember 2026 	52
+
+Neujahr 2027 	Freitag 1 Januar 2027 	53
+Berchtoldstag 2027 	Samstag 2 Januar 2027 	53
+Heilige Drei Könige 2027 	Mittwoch 6 Januar 2027 	01
+Josefstag 2027 	Freitag 19 März 2027 	11
+Karfreitag 2027 	Freitag 26 März 2027 	12
+Ostermontag 2027 	Montag 29 März 2027 	13
+Tag der Arbeit 2027 	Samstag 1 Mai 2027 	17
+Auffahrt 2027 	Donnerstag 6 Mai 2027 	18
+Pfingstmontag 2027 	Montag 17 Mai 2027 	20
+Fronleichnam 2027 	Donnerstag 27 Mai 2027 	21
+Bundesfeiertag 2027 	Sonntag 1 August 2027 	30
+Mariä Himmelfahrt 2027 	Sonntag 15 August 2027 	32
+Allerheiligen 2027 	Montag 1 November 2027 	44
+Mariä Empfängnis 2027 	Mittwoch 8 Dezember 2027 	49
+Weihnachtstag 2027 	Samstag 25 Dezember 2027 	51
+Stephanstag 2027 	Sonntag 26 Dezember 2027 	51
+
+Neujahr 2028 	Samstag 1 Januar 2028 	52
+Berchtoldstag 2028 	Sonntag 2 Januar 2028 	52
+Heilige Drei Könige 2028 	Donnerstag 6 Januar 2028 	01
+Josefstag 2028 	Sonntag 19 März 2028 	11
+Karfreitag 2028 	Freitag 14 April 2028 	15
+Ostermontag 2028 	Montag 17 April 2028 	16
+Tag der Arbeit 2028 	Montag 1 Mai 2028 	18
+Auffahrt 2028 	Donnerstag 25 Mai 2028 	21
+Pfingstmontag 2028 	Montag 5 Juni 2028 	23
+Fronleichnam 2028 	Donnerstag 15 Juni 2028 	24
+Bundesfeiertag 2028 	Dienstag 1 August 2028 	31
+Mariä Himmelfahrt 2028 	Dienstag 15 August 2028 	33
+Allerheiligen 2028 	Mittwoch 1 November 2028 	44
+Mariä Empfängnis 2028 	Freitag 8 Dezember 2028 	49
+Weihnachtstag 2028 	Montag 25 Dezember 2028 	52
+Stephanstag 2028 	Dienstag 26 Dezember 2028 	52
+
+Neujahr 2029 	Montag 1 Januar 2029 	01
+Berchtoldstag 2029 	Dienstag 2 Januar 2029 	01
+Heilige Drei Könige 2029 	Samstag 6 Januar 2029 	01
+Josefstag 2029 	Montag 19 März 2029 	12
+Karfreitag 2029 	Freitag 30 März 2029 	13
+Ostermontag 2029 	Montag 2 April 2029 	14
+Tag der Arbeit 2029 	Dienstag 1 Mai 2029 	18
+Auffahrt 2029 	Donnerstag 10 Mai 2029 	19
+Pfingstmontag 2029 	Montag 21 Mai 2029 	21
+Fronleichnam 2029 	Donnerstag 31 Mai 2029 	22
+Bundesfeiertag 2029 	Mittwoch 1 August 2029 	31
+Mariä Himmelfahrt 2029 	Mittwoch 15 August 2029 	33
+Allerheiligen 2029 	Donnerstag 1 November 2029 	44
+Mariä Empfängnis 2029 	Samstag 8 Dezember 2029 	49
+Weihnachtstag 2029 	Dienstag 25 Dezember 2029 	52
+Stephanstag 2029 	Mittwoch 26 Dezember 2029 	52
