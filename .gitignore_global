@@ -5,3 +5,4 @@ nohup.out
 .markdownmake.lck
 .gdb_history
 a.out
+.cache/
