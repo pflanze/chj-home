@@ -115,9 +115,6 @@ EOF
 set +eu
 set -x
 
-gpg --import /opt/chj/chjize/cj-key.asc || true
-gpg --import /opt/chj/chjize/cj-key-2.asc || true
-
 /opt/chj/chjize/bin/chj-checkout _ignored_ https://github.com/pflanze/chj-emacs .chj-emacs '^v(\d+)$'
 
 ln -s .chj-emacs/.emacs
