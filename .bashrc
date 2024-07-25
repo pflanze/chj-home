@@ -147,6 +147,9 @@ cd_newest_sisterfolder () {
 cd_newest () {
     cd "$(_ls_newest .)"
 }
+cdat() {
+    cdnewdir "$(dat --day --week)"
+}
 cdn () {
     if [ $# -eq 0 ]; then
 	cd_newest
