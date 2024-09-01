@@ -141,42 +141,67 @@ mvcd () {
 _ls_newest () {
     local n
     n="$1"
+    local opts
+    opts="$2"
     shift
-    lastdir --depth "$n" --fullpath -a -- "$@"
+    shift
+    lastdir --depth "$n" --fullpath $opts -- "$@"
 }
 cd_newest_sisterfolder () {
     local n
     n="${1-0}"
-    cd "$(_ls_newest "$n" ..)"
+    local opts
+    opts="${2-}"
+    cd "$(_ls_newest "$n" "$opts" ..)"
 }
 cd_newest () {
     local n
     n="${1-0}"
-    cd "$(_ls_newest "$n" .)"
+    local opts
+    opts="${2-}"
+    cd "$(_ls_newest "$n" "$opts" .)"
 }
 cdat() {
     cdnewdir "$(dat --day --week "$@")"
 }
 cdn () {
+    local opts
+    opts=""
+    if [ "${1-}" = "-a" ]; then
+        opts="-a"
+        shift
+    fi
     if [ $# -eq 0 ]; then
-	cd_newest 0
+	cd_newest 0 "$opts"
     else
-	cdnewdir "$@"
+        cdnewdir "$@"
     fi
 }
 cdnn () {
+    local opts
+    opts=""
+    if [ "${1-}" = "-a" ]; then
+        opts="-a"
+        shift
+    fi
     if [ $# -eq 0 ]; then
-	cd_newest 1
+	cd_newest 1 "$opts"
     else
-	cd_newest 0
+	cd_newest 0 "$opts"
         cdnewdir "$@"
     fi
 }
 cdnnn () {
+    local opts
+    opts=""
+    if [ "${1-}" = "-a" ]; then
+        opts="-a"
+        shift
+    fi
     if [ $# -eq 0 ]; then
-	cd_newest 2
+	cd_newest 2 "$opts"
     else
-	cd_newest 1
+	cd_newest 1 "$opts"
         cdnewdir "$@"
     fi
 }
