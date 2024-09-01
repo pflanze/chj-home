@@ -139,41 +139,44 @@ mvcd () {
     fi
 }
 _ls_newest () {
-    lastdir --fullpath -a -- "$@"
+    local n
+    n="$1"
+    shift
+    lastdir --depth "$n" --fullpath -a -- "$@"
 }
 cd_newest_sisterfolder () {
-    cd "$(_ls_newest ..)$"
+    local n
+    n="${1-0}"
+    cd "$(_ls_newest "$n" ..)"
 }
 cd_newest () {
-    cd "$(_ls_newest .)"
+    local n
+    n="${1-0}"
+    cd "$(_ls_newest "$n" .)"
 }
 cdat() {
     cdnewdir "$(dat --day --week "$@")"
 }
 cdn () {
     if [ $# -eq 0 ]; then
-	cd_newest
+	cd_newest 0
     else
 	cdnewdir "$@"
     fi
 }
 cdnn () {
     if [ $# -eq 0 ]; then
-	cd_newest
-        cd_newest
+	cd_newest 1
     else
-	cd_newest
+	cd_newest 0
         cdnewdir "$@"
     fi
 }
 cdnnn () {
     if [ $# -eq 0 ]; then
-	cd_newest
-	cd_newest
-        cd_newest
+	cd_newest 2
     else
-	cd_newest
-	cd_newest
+	cd_newest 1
         cdnewdir "$@"
     fi
 }
