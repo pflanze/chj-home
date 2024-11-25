@@ -326,7 +326,6 @@ ct () {
 
 
 find () { my.find "$@"; }
-df () { my.df "$@"; }
 mt () { /opt/chj/bin/mt "$@"; }
 
 mv () { command mv -i "$@"; }
