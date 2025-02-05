@@ -75,7 +75,7 @@ if [ -e .bash_profile_local ]; then
 fi
 cat <<'EOF' > .bash_profile_local
 export EDITOR=e
-export BROWSER="firefox --new-window"
+export BROWSER="firefox--new-window"
 export EMAIL=$(cat ~/.chj-home_email)
 export LANG=en_GB.UTF-8
 EOF
