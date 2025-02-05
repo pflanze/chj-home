@@ -74,7 +74,7 @@ if [ -e .bash_profile_local ]; then
     /opt/chj/bin/mvnumber .bash_profile_local
 fi
 cat <<'EOF' > .bash_profile_local
-export EDITOR=e
+export EDITOR=ew
 export BROWSER="firefox--new-window"
 export EMAIL=$(cat ~/.chj-home_email)
 export LANG=en_GB.UTF-8
