@@ -138,6 +138,16 @@ mvcd () {
 	false
     fi
 }
+
+cdgit() {
+    local d
+    if d=$(git rev-parse --git-dir); then
+        cd "$d/.."
+    else
+        false
+    fi
+}
+
 _ls_newest () {
     local n
     n="$1"
