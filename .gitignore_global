@@ -6,3 +6,4 @@ nohup.out
 .gdb_history
 a.out
 .cache/
+.cj-cargolock/
