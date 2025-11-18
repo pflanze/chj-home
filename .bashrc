@@ -215,6 +215,34 @@ cdnnn () {
         cdnewdir "$@"
     fi
 }
+cdnnnn () {
+    local opts
+    opts=""
+    if [ "${1-}" = "-a" ]; then
+        opts="-a"
+        shift
+    fi
+    if [ $# -eq 0 ]; then
+	cd_newest 3 "$opts"
+    else
+	cd_newest 2 "$opts"
+        cdnewdir "$@"
+    fi
+}
+cdnnnnn () {
+    local opts
+    opts=""
+    if [ "${1-}" = "-a" ]; then
+        opts="-a"
+        shift
+    fi
+    if [ $# -eq 0 ]; then
+	cd_newest 4 "$opts"
+    else
+	cd_newest 3 "$opts"
+        cdnewdir "$@"
+    fi
+}
 
 _cgd_ () {
     local gd_="$1"
