@@ -39,7 +39,7 @@ __ps1_show_exitcode () {
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-xterm-color|xterm)
+xterm-256color|xterm-color|xterm)
     PS1='$(__ps1_show_exitcode)\u@$CHJHOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     ;;
 *)
