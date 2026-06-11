@@ -393,6 +393,7 @@ ct () {
 
 find () { my.find "$@"; }
 mt () { /opt/chj/bin/mt "$@"; }
+lft () { my.lft "$@"; }
 
 mv () { command mv -i "$@"; }
 cp () { command cp -i "$@"; }
