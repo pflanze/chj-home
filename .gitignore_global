@@ -8,3 +8,4 @@ nohup.out
 a.out
 .cache/
 .cj-cargolock/
+target/
