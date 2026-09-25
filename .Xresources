@@ -47,7 +47,7 @@ URxvt.scrollWithBuffer: True
 URxvt.perl-ext: default,-selection
 URxvt.perl-ext-common: default,matcher
 URxvt.matcher.button: 1
-URxvt.matcher.pattern.1: ^([^\\t]+[^\\t:]:\\d+:\\d+)$
+URxvt.matcher.pattern.1: ^(?:[ \\t]*-->[ \\t]+)?([^\\t]+[^\\t:]:\\d+:\\d+)$
 URxvt.matcher.launcher.1: rxvt-run g $1
 
 
