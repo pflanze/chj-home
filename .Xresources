@@ -41,15 +41,15 @@ XEmacs*menubar*FontSet: -adobe-helvetica-bold-r-normal-*-12-*-*-*-*-*-*-*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 URxvt.geometry: 110x30
-
 URxvt.scrollTtyOutput: False
 URxvt.scrollTtyKeypress: True
 URxvt.scrollWithBuffer: True
-
-! URxvt.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
-! uses cmdline flag (-fn) from term now
-
 URxvt.perl-ext: default,-selection
+URxvt.perl-ext-common: default,matcher
+URxvt.matcher.button: 1
+URxvt.matcher.pattern.1: ^([^\\t]+[^\\t:]:\\d+:\\d+)$
+URxvt.matcher.launcher.1: rxvt-run g $1
+
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 xearth.bigstars:	20
